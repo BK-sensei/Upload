@@ -20,6 +20,9 @@ app.use(morgan('tiny'))
 
 app.use(express.json()) //======> permet de lire le req.body
 
+// on rend accessible/publique le dossier '/public'
+app.use(express.static('public'))
+
 // initialisation de la session
 app.use(session({
     secret: "secret",
