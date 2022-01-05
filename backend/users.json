@@ -1,1 +1,27 @@
-[{"id":1,"username":"jack","email":"jack@jack.jack","password":"hello","age":99},{"id":2,"username":"john","email":"john@john.john","password":"yoyo","age":1},{"username":"bob","password":"bobobobobo","passwordConfirmation":"bobobobobo","email":"bob@bob.bob","age":44,"id":3}]
+[
+    {
+        "id":1,
+        "username":"jack",
+        "email":"jack@jack.jack",
+        "password":"hello",
+        "age":99,
+        "profilePicture":""
+    },
+    {
+        "id":2,
+        "username":"john",
+        "email":"john@john.john",
+        "password":"yoyo",
+        "age":1,
+        "profilePicture":""
+    },
+    {
+        "username":"bob",
+        "password":"bobobobobo",
+        "passwordConfirmation":"bobobobobo",
+        "email":"bob@bob.bob",
+        "age":44,
+        "id":3,
+        "profilePicture":""
+    }
+]
