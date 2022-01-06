@@ -31,6 +31,7 @@ const Signup = () => {
       passwordConfirmation: "",
       email: "",
       age: "",
+      photo:""
     },
     onSubmit: values => {  
       // on va créer notre utilisateur dans le backend    
@@ -81,7 +82,9 @@ const Signup = () => {
         .required("Email is required")
         .email("Email invalid"),
       age: Yup.string()
-        .required("Age is required")
+        .required("Age is required"),
+      photo: Yup.string()
+        .required("You must upload a picture for your profile")
     })
   })
 
@@ -185,6 +188,17 @@ const Signup = () => {
                         />
                     </InputGroup>
                     <FormErrorMessage>{formik.errors.age}</FormErrorMessage>
+                    </FormControl>
+
+                    <FormControl mt={5} isInvalid={formik.errors.age}>
+                    <FormLabel htmlFor='photo'>Upload a picture</FormLabel>
+                      <input
+                      type='file'
+                      name='photo'
+                      // value={formik.values.age}
+                      onChange={formik.handleChange}
+                      />
+                    <FormErrorMessage>{formik.errors.photo}</FormErrorMessage>
                     </FormControl>
 
                     <Button mt={5} w='100%' type='submit' color='white' bg='teal'>Signup</Button>
