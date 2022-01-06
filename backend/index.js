@@ -1,13 +1,15 @@
 const express = require("express")
+const app = express()
+const port = 5000
 const morgan = require("morgan")
 const cors = require("cors")
 const session = require("express-session")
 const passport = require("./config/passport")
-const app = express()
-const port = 5000
+const multer  = require('multer')
 
 const authRoutes = require("./routes/auth")
 const adminRoutes = require("./routes/admin")
+const filesRoutes = require("./routes/files")
 
 app.use(cors({
     origin: 'http://localhost:3000',
@@ -36,6 +38,7 @@ app.use(passport.session())
 
 app.use("/auth", authRoutes)
 app.use("/admin", adminRoutes)
+app.use("/files", filesRoutes)
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
